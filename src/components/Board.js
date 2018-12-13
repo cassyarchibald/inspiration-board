@@ -42,7 +42,9 @@ class Board extends Component {
 
   cardCollection = () => {
     return this.state.cards.map(card => {
-      return <Card text={card.text} id={card.id} emoji={card.emoji} />;
+      return (
+        <Card text={card.text} id={card.id} key={card.id} emoji={card.emoji} />
+      );
     });
   };
 
