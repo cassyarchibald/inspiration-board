@@ -17,6 +17,20 @@ class Board extends Component {
       cards: []
     };
   }
+  addCard = newCard => {
+    const apiPayload = {
+      ...newCard
+    };
+    axios.post(URL, apiPayload).then(response => {
+      console.log(response);
+      const myNewCard = response.data;
+      const { cards } = this.state;
+      cards.push(newCard);
+      this.setState({
+        cards
+      });
+    });
+  };
 
   componentDidMount() {
     axios
@@ -49,7 +63,12 @@ class Board extends Component {
   };
 
   render() {
-    return <div>{this.cardCollection()}</div>;
+    return (
+      <div>
+        {this.cardCollection()}
+        <NewCardForm addCardCallback={this.addCard} />
+      </div>
+    );
   }
 }
 
