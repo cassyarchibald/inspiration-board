@@ -39,6 +39,20 @@ class NewCardForm extends Component {
     this.setState(updatedState);
   };
 
+  emojiDropdownOptions = () => {
+    const emoji = require("emoji-dictionary");
+    // Map through text
+    // Creat options
+    // Translate via unicode
+    return EMOJI_LIST.map(emojiIcon => {
+      return <option value={emojiIcon}>{emoji.getUnicode(emojiIcon)}</option>;
+    });
+    // const emojiIcons = emoji.unicode;
+    // return emojiIcons.map(emojiIcon => {
+    //   return <option>{emojiIcon}</option>;
+    // });
+  };
+
   onSubmit = event => {
     event.preventDefault();
     const { text, emoji } = this.state;
@@ -69,12 +83,15 @@ class NewCardForm extends Component {
           <label className="new-card-form--label" htmlFor="Emoji">
             Emoji
           </label>
-          <input
+          // TODO Change to drop down
+          <select
             name="emoji"
             placeholder="emoji"
-            onChange={this.onFormChange}
             value={this.state.emoji}
-          />
+            onChange={this.onFormChange}
+          >
+            {this.emojiDropdownOptions()}
+          </select>
         </div>
         <input
           className="btn btn-success new-card-form--submit"
