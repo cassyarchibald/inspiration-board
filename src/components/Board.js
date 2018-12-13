@@ -7,6 +7,7 @@ import Card from "./Card";
 import NewCardForm from "./NewCardForm";
 import CARD_DATA from "../data/card-data.json";
 const emoji = require("emoji-dictionary");
+const URL = "https://inspiration-board.herokuapp.com/boards/Cassy/cards";
 
 class Board extends Component {
   constructor() {
@@ -17,8 +18,30 @@ class Board extends Component {
     };
   }
 
+  componentDidMount() {
+    axios
+      .get(`${this.props.url}${this.props.boardName}` + "/cards")
+      .then(response => {
+        const cards = response.data.map(cardObject => {
+          const newCard = {
+            ...cardObject.card
+          };
+          return newCard;
+        });
+        this.setState({
+          cards: cards
+        });
+      })
+      .catch(error => {
+        console.log(error.message);
+        this.setState({
+          errorMessage: error.message
+        });
+      });
+  }
+
   cardCollection = () => {
-    return CARD_DATA["cards"].map(card => {
+    return this.state.cards.map(card => {
       return <Card text={card.text} id={card.id} emoji={card.emoji} />;
     });
   };
@@ -28,6 +51,9 @@ class Board extends Component {
   }
 }
 
-Board.propTypes = {};
+Board.propTypes = {
+  boardName: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+};
 
 export default Board;
