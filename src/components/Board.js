@@ -18,15 +18,23 @@ class Board extends Component {
     };
   }
   addCard = newCard => {
-    axios.post(URL).then(response => {
-      console.log(response);
-      const myNewCard = response.data;
-      const { cards } = this.state;
-      cards.push(newCard);
-      this.setState({
-        cards
+    axios
+      .post(URL, newCard)
+      .then(response => {
+        console.log(response);
+        // const myNewCard = response.data;
+        const { cards } = this.state;
+        cards.push(newCard);
+        this.setState({
+          cards
+        });
+      })
+      .catch(error => {
+        console.log(error.message);
+        this.setState({
+          errorMessage: error.message
+        });
       });
-    });
   };
 
   removeCard = cardId => {
@@ -44,6 +52,7 @@ class Board extends Component {
     // Sending axios delete request
     axios
       .delete(deleteUrl)
+      // .delete("gibberish")
       .then(response => {
         console.log("Card was deleted :)");
         cards.splice(deleteIndex, 1);
@@ -95,10 +104,18 @@ class Board extends Component {
       );
     });
   };
-
+  // showErrorMessages = () => {
+  //   this.state.errorMessage &&
+  //     this.state.errorMessage.map(error => {
+  //       return <p>{error}</p>;
+  //     });
+  // };
   render() {
     return (
-      <div>
+      <div className="board">
+        <div className="validations-errors-display">
+          <ul className="validation-errors-display__list" />
+        </div>
         {this.cardCollection()}
         <NewCardForm addCardCallback={this.addCard} />
       </div>
