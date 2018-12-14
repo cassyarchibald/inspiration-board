@@ -38,6 +38,13 @@ ShallowWrapper {
             😍
           </p>
         </section>
+        <button
+          className="card__delete"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
       </div>,
       "className": "card",
     },
@@ -62,6 +69,13 @@ ShallowWrapper {
               😍
             </p>
           </section>,
+          <button
+            className="card__delete"
+            onClick={[Function]}
+            type="button"
+          >
+            Delete
+          </button>,
         ],
         "className": "card__content",
       },
@@ -119,6 +133,20 @@ ShallowWrapper {
           },
           "type": "section",
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Delete",
+            "className": "card__delete",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Delete",
+          "type": "button",
+        },
       ],
       "type": "div",
     },
@@ -147,6 +175,13 @@ ShallowWrapper {
               😍
             </p>
           </section>
+          <button
+            className="card__delete"
+            onClick={[Function]}
+            type="button"
+          >
+            Delete
+          </button>
         </div>,
         "className": "card",
       },
@@ -171,6 +206,13 @@ ShallowWrapper {
                 😍
               </p>
             </section>,
+            <button
+              className="card__delete"
+              onClick={[Function]}
+              type="button"
+            >
+              Delete
+            </button>,
           ],
           "className": "card__content",
         },
@@ -227,6 +269,20 @@ ShallowWrapper {
               "type": "p",
             },
             "type": "section",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Delete",
+              "className": "card__delete",
+              "onClick": [Function],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "Delete",
+            "type": "button",
           },
         ],
         "type": "div",
