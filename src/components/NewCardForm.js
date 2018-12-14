@@ -39,18 +39,32 @@ class NewCardForm extends Component {
     this.setState(updatedState);
   };
 
+  // emojiDropdownOptions = () => {
+  //const emoji = require("emoji-dictionary");
+  // Map through text
+  // Creat options
+  // Translate via unicode
+
+  // const emojiNames = emoji.names;
+  // return emojiNames.map(emojiName => {
+  //   return <option value={emojiName}>{emoji.getUnicode(emojiName)}</option>;
+  // });
+  // const emojiIcons = emoji.unicode;
+  // return emojiIcons.map(emojiIcon => {
+  //   return <option>{emojiIcon}</option>;
+  // });
+  // };
+
   emojiDropdownOptions = () => {
-    const emoji = require("emoji-dictionary");
-    // Map through text
-    // Creat options
-    // Translate via unicode
-    return EMOJI_LIST.map(emojiIcon => {
-      return <option value={emojiIcon}>{emoji.getUnicode(emojiIcon)}</option>;
+    const emojis = [""].concat(emoji.names);
+    return emojis.map((emojiname, i) => {
+      return (
+        <option value={emojiname} key={i}>
+          {" "}
+          {emoji.getUnicode(emojiname)}{" "}
+        </option>
+      );
     });
-    // const emojiIcons = emoji.unicode;
-    // return emojiIcons.map(emojiIcon => {
-    //   return <option>{emojiIcon}</option>;
-    // });
   };
 
   onSubmit = event => {
@@ -83,7 +97,6 @@ class NewCardForm extends Component {
           <label className="new-card-form--label" htmlFor="Emoji">
             Emoji
           </label>
-          // TODO Change to drop down
           <select
             name="emoji"
             placeholder="emoji"

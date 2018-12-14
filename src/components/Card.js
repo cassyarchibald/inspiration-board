@@ -7,21 +7,23 @@ import "./Card.css";
 class Card extends Component {
   render() {
     return (
-      <div className="card">
-        <section className="card__content-text">
-          <p>{this.props.text}</p>
-        </section>
+      <section className="card">
+        <div className="card__content">
+          <section>
+            <p className="card__content-text">{this.props.text}</p>
+          </section>
 
-        <section className="card__content-emoji">
-          {this.props.emoji && (
-            <p>
-              {emoji.getUnicode(this.props.emoji)
-                ? emoji.getUnicode(this.props.emoji)
-                : this.props.emoji}
-            </p>
-          )}
-        </section>
-      </div>
+          <section>
+            {this.props.emoji && (
+              <p className="card__content-emoji">
+                {emoji.getUnicode(this.props.emoji)
+                  ? emoji.getUnicode(this.props.emoji)
+                  : this.props.emoji}
+              </p>
+            )}
+          </section>
+        </div>
+      </section>
     );
   }
 }

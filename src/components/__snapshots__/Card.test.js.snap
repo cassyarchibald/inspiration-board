@@ -21,100 +21,49 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <section
-          className="card__content-text"
-        >
-          <p>
+      "children": <div
+        className="card__content"
+      >
+        <section>
+          <p
+            className="card__content-text"
+          >
             Test Card
           </p>
-        </section>,
-        <section
-          className="card__content-emoji"
-        >
-          <p>
+        </section>
+        <section>
+          <p
+            className="card__content-emoji"
+          >
             😍
           </p>
-        </section>,
-      ],
+        </section>
+      </div>,
       "className": "card",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <p>
-            Test Card
-          </p>,
-          "className": "card__content-text",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Test Card",
-          },
-          "ref": null,
-          "rendered": "Test Card",
-          "type": "p",
-        },
-        "type": "section",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <p>
-            😍
-          </p>,
-          "className": "card__content-emoji",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "😍",
-          },
-          "ref": null,
-          "rendered": "😍",
-          "type": "p",
-        },
-        "type": "section",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <section
-            className="card__content-text"
-          >
-            <p>
+          <section>
+            <p
+              className="card__content-text"
+            >
               Test Card
             </p>
           </section>,
-          <section
-            className="card__content-emoji"
-          >
-            <p>
+          <section>
+            <p
+              className="card__content-emoji"
+            >
               😍
             </p>
           </section>,
         ],
-        "className": "card",
+        "className": "card__content",
       },
       "ref": null,
       "rendered": Array [
@@ -123,10 +72,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <p>
+            "children": <p
+              className="card__content-text"
+            >
               Test Card
             </p>,
-            "className": "card__content-text",
           },
           "ref": null,
           "rendered": Object {
@@ -135,6 +85,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Test Card",
+              "className": "card__content-text",
             },
             "ref": null,
             "rendered": "Test Card",
@@ -147,10 +98,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <p>
+            "children": <p
+              className="card__content-emoji"
+            >
               😍
             </p>,
-            "className": "card__content-emoji",
           },
           "ref": null,
           "rendered": Object {
@@ -159,6 +111,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "😍",
+              "className": "card__content-emoji",
             },
             "ref": null,
             "rendered": "😍",
@@ -168,6 +121,117 @@ ShallowWrapper {
         },
       ],
       "type": "div",
+    },
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card__content"
+        >
+          <section>
+            <p
+              className="card__content-text"
+            >
+              Test Card
+            </p>
+          </section>
+          <section>
+            <p
+              className="card__content-emoji"
+            >
+              😍
+            </p>
+          </section>
+        </div>,
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <section>
+              <p
+                className="card__content-text"
+              >
+                Test Card
+              </p>
+            </section>,
+            <section>
+              <p
+                className="card__content-emoji"
+              >
+                😍
+              </p>
+            </section>,
+          ],
+          "className": "card__content",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p
+                className="card__content-text"
+              >
+                Test Card
+              </p>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Test Card",
+                "className": "card__content-text",
+              },
+              "ref": null,
+              "rendered": "Test Card",
+              "type": "p",
+            },
+            "type": "section",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p
+                className="card__content-emoji"
+              >
+                😍
+              </p>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "😍",
+                "className": "card__content-emoji",
+              },
+              "ref": null,
+              "rendered": "😍",
+              "type": "p",
+            },
+            "type": "section",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "section",
     },
   ],
   Symbol(enzyme.__options__): Object {

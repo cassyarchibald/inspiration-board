@@ -5,7 +5,7 @@ import axios from "axios";
 import "./Board.css";
 import Card from "./Card";
 import NewCardForm from "./NewCardForm";
-import CARD_DATA from "../data/card-data.json";
+//import CARD_DATA from "../data/card-data.json";
 const emoji = require("emoji-dictionary");
 const URL = "https://inspiration-board.herokuapp.com/boards/Cassy/cards";
 
@@ -56,9 +56,7 @@ class Board extends Component {
 
   cardCollection = () => {
     return this.state.cards.map(card => {
-      return (
-        <Card text={card.text} id={card.id} key={card.id} emoji={card.emoji} />
-      );
+      return <Card text={card.text} id={card.id} emoji={card.emoji} />;
     });
   };
 
