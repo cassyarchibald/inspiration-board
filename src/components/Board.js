@@ -19,7 +19,7 @@ class Board extends Component {
   }
   addCard = newCard => {
     axios
-      .post(URL, newCard)
+      .post(URL)
       .then(response => {
         console.log(response);
         // const myNewCard = response.data;
@@ -30,7 +30,6 @@ class Board extends Component {
         });
       })
       .catch(error => {
-        console.log(error.message);
         this.setState({
           errorMessage: error.message
         });
@@ -104,17 +103,14 @@ class Board extends Component {
       );
     });
   };
-  // showErrorMessages = () => {
-  //   this.state.errorMessage &&
-  //     this.state.errorMessage.map(error => {
-  //       return <p>{error}</p>;
-  //     });
-  // };
+
   render() {
     return (
       <div className="board">
         <div className="validations-errors-display">
-          <ul className="validation-errors-display__list" />
+          <ul className="validation-errors-display__list">
+            {this.state.errorMessage}
+          </ul>
         </div>
         {this.cardCollection()}
         <NewCardForm addCardCallback={this.addCard} />
